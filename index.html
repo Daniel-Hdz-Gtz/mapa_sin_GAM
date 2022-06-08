@@ -39,7 +39,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[19.233798793801586,-99.36148845360555],[19.475071638183184,-98.96347565340062]]);
+        }).fitBounds([[19.223201000883183,-99.3615119644638],[19.485669350786804,-98.96347327783016]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -119,7 +119,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_mgpc_2019_1');
@@ -127,7 +127,7 @@
         map.getPane('pane_mgpc_2019_1').style['mix-blend-mode'] = 'normal';
         var layer_mgpc_2019_1 = new L.geoJson(json_mgpc_2019_1, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_mgpc_2019_1',
             layerName: 'layer_mgpc_2019_1',
             pane: 'pane_mgpc_2019_1',
@@ -7443,7 +7443,8 @@
         function pop_sec_prioritariascopiar_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['gid'] !== null ? autolinker.link(feature.properties['gid'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">gid</th>\
+                        <td>' + (feature.properties['gid'] !== null ? autolinker.link(feature.properties['gid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">municipio</th>\
@@ -7647,7 +7648,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_alcaldias_4');
@@ -7655,7 +7656,7 @@
         map.getPane('pane_alcaldias_4').style['mix-blend-mode'] = 'normal';
         var layer_alcaldias_4 = new L.geoJson(json_alcaldias_4, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_alcaldias_4',
             layerName: 'layer_alcaldias_4',
             pane: 'pane_alcaldias_4',
